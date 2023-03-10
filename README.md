@@ -9,6 +9,7 @@
 ### Usage
 
 ```js
+const selector = ".classname"
 const config = {
   percentage: 0.7, // Percentage of word length that gets highlighted
   wrapper: ["<strong>", "</strong>"], // Wrapping element
