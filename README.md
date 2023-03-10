@@ -6,14 +6,18 @@
 
 ### Usage
 #### Wrap with <strong>
+```js
 fastReading(".fastreading", {
     percentage: 0.7,
     wrapper: ["<strong>", "</strong>"],
     min: 4,
 });
+```
 #### Wrap with <span> with class for styling
+```js
 fastReading(".fastreading-withclasswrapper", {
     percentage: 0.7,
     wrapper: ['<span class="highlighted">', "</span>"],
     min: 4,
 });
+```
