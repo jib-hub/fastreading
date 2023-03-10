@@ -3,7 +3,7 @@
  * @param {selector} selector
  * @param {object} config
  */
-const fastReading = (selector, config) => {
+const fastReading = (selector, config = {}) => {
   const configTemp = config;
   /**
    * defaults

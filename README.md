@@ -37,3 +37,8 @@ fastReading(".fastreading-withclasswrapper", {
   min: 4,
 });
 ```
+#### simple usage
+
+```js
+fastReading(".fastreading-simple");
+```
