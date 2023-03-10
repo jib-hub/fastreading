@@ -1,5 +1,5 @@
 # FastReading
-
+Version 1.0.0
 ## Transform HTML text nodes to better readable text
 
 ### Install
@@ -11,9 +11,9 @@
 ```js
 const selector = ".classname"
 const config = {
-  percentage: 0.7, // Percentage of word length that gets highlighted
-  wrapper: ["<strong>", "</strong>"], // Wrapping element
-  min: 4, // Minimum length of a word that gets highlighted
+  percentage: 0.7, // Percentage of word length that gets highlighted | optional
+  wrapper: ["<strong>", "</strong>"], // Wrapping element | optional
+  min: 4, // Minimum length of a word that gets highlighted | optional
 };
 fastReading(selector, config);
 ```

@@ -1,12 +1,21 @@
-const defaults = {
-  percentage: 0.7,
-  wrapper: ["<strong>", "</strong>"],
-  min: 4,
-};
+/**
+ *
+ * @param {selector} selector
+ * @param {object} config
+ */
+const fastReading = (selector, config) => {
+  const configTemp = config;
+  /**
+   * defaults
+   */
+  const {
+    percentage = 0.7,
+    wrapper = ["<strong>", "</strong>"],
+    min = 4,
+  } = configTemp;
 
-const fastReading = (selector, config = defaults) => {
   const nodes = document.querySelectorAll(selector);
-  nodes.forEach((node, index) => {
+  nodes.forEach((node) => {
     const text = node?.innerText;
     const sentences = text.split(".");
     let convertedSentences = [];
@@ -17,20 +26,20 @@ const fastReading = (selector, config = defaults) => {
       }
       const words = sentence.split(" ");
       let convertedWords = [];
-      words.forEach((word, index) => {
+      words.forEach((word) => {
         if (word === "") {
           return;
         }
-        if (word?.length < config.min) {
+        if (word?.length < min) {
           convertedWords.push(word);
           return;
         }
         const wordLength = word?.length;
-        const until = Math.floor(config.percentage * wordLength);
+        const until = Math.floor(percentage * wordLength);
         const convertedWordStart = word.substring(0, until);
         const convertedWordEnd = word.substring(until, wordLength);
         const wrappedConvertedWordStart =
-          config.wrapper[0] + convertedWordStart + config.wrapper[1];
+          wrapper[0] + convertedWordStart + wrapper[1];
         const highlightedWord = wrappedConvertedWordStart + convertedWordEnd;
         convertedWords.push(highlightedWord);
       });
